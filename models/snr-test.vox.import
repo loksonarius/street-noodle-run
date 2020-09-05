@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/snr-test.vox-f3fec2724c201a53435822ff050932d2.mesh"
+
+[deps]
+
+source_file="res://models/snr-test.vox"
+dest_files=[ "res://.import/snr-test.vox-f3fec2724c201a53435822ff050932d2.mesh" ]
+
+[params]
+

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://materials/UnitGrid.tres" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
+size = Vector3( 20, 60, 20 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( -10, 30, 10, 10, 30, -10, 10, 30, 10, -10, 30, -10, -10, -30, 10, 10, -30, -10, 10, -30, 10, -10, -30, -10, 10, 30, 10, -10, 30, -10, 10, 30, -10, -10, 30, 10, 10, -30, 10, -10, -30, -10, 10, -30, -10, -10, -30, 10, 10, 30, 10, -10, -30, 10, -10, 30, 10, 10, -30, 10, 10, 30, -10, -10, -30, -10, -10, 30, -10, 10, -30, -10 )
+
+[node name="Building" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 2 )

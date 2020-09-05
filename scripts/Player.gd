@@ -6,12 +6,13 @@ extends KinematicBody
 # Enums
 # Constants
 var GRAVITY: Vector3 = Vector3.DOWN * 9.8
-var SPEED: int = 4
+var SPEED: int = 30
 # Exports
 # Public Vars
 # Private Vars
 var _vel: Vector3 = Vector3.ZERO
 # Ready Vars
+onready var Camera := $Camera
 
 func _init() -> void:
 	pass
@@ -21,6 +22,7 @@ func _ready() -> void:
 
 # Override Funcs
 func _process(_delta: float) -> void:
+	Camera.look_at(global_transform.origin, Vector3.UP)
 	print("pos/vel="+str(_vel)+"/"+str(global_transform.origin))
 
 func _physics_process(delta: float) -> void:
